@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
+             x:Class="QrCodeScanZX.MainPage">
+
+
+    <StackLayout>
+        <StackLayout WidthRequest="300" HeightRequest="200">
+            <zxing:CameraBarcodeReaderView 
+        x:Name="barcodeReader" BarcodesDetected="barcodeReader_BarcodesDetected"
+        />
+        </StackLayout>
+
+        <Label x:Name="linkLabel"
+               Margin="50,50"
+       TextColor="Blue"
+       IsVisible="False">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnLinkLabelTapped" />
+            </Label.GestureRecognizers>
+        </Label>
+    </StackLayout>
+</ContentPage>
